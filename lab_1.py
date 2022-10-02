@@ -1,3 +1,4 @@
+import sys
 q = []
 while True:
     a = input()
@@ -5,6 +6,9 @@ while True:
         break
     else:
         q.append(a)
+if len(q) <= 2:
+    print('error!')
+    sys.exit()
 mas = [int(x) for x in q]
 mas.sort()
 
@@ -19,4 +23,6 @@ def count(x, b, c):
         print(s)
     else:
         print('Такого треугольника не существует')
-count(x,b,c)
+if x > 0 and b > 0 and c > 0:
+    count(x, b, c)
+
